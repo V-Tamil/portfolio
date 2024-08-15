@@ -7,17 +7,20 @@
   scroll-behavior: smooth;
 }
 
-body {
-  background-color: #0f172a;
-}
 p {
   color: #94a3b8;
 }
-.main_container {
-  /* background-color: rgb(112, 111, 111); */
-  /* margin: 90px 120px; */
-  display: flex;
+
+.main-container {
+  background-color: #0f172a;
 }
+
+.main-wrapper {
+  margin: auto;
+  display: flex;
+  max-width: 1400px;
+}
+
 .left_side {
   width: 50%;
   position: sticky;
@@ -26,24 +29,29 @@ p {
   padding: 90px 90px 0 120px;
   height: 100vh;
 }
+
 .right_side {
   width: 50%;
   padding: 90px 90px 120px 0;
 }
+
 .profile_name {
   font-size: 48px;
   font-weight: 700;
 }
+
 .profile_role {
   margin-top: 5px;
   font-size: 20px;
   font-weight: 500;
 }
+
 .profile_intro {
   max-width: 320px;
   font-size: 16px;
   margin-top: 10px;
 }
+
 .line {
   background-color: white;
   height: 1px;
@@ -186,14 +194,49 @@ p {
 }
 .resume a {
   text-decoration: none;
+  color: #fff;
+  font-size: 600;
 }
+
+.resume i {
+  transform: rotate(-45deg);
+}
+
 .footer {
   margin-top: 20%;
   font-size: 14px;
 }
 
+/*
+  Cursor Follower Styles
+ */
+
+.cursor-follower {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+  background-image: radial-gradient(
+    600px at var(--mouse-x) var(--mouse-y),
+    rgba(29, 78, 216, 0.15),
+    transparent 80%
+  );
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .cursor-follower {
+    background-image: radial-gradient(
+      600px at top left,
+      rgba(29, 78, 216, 0.15),
+      transparent 80%
+    );
+  }
+}
+
 @media screen and (max-width: 800px) {
-  .main_container {
+  .wrapper-container {
     /* margin: 20px; */
     /* background-color: aqua; */
     margin: 60px 40px;
